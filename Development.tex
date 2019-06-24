@@ -1,0 +1,52 @@
+
+\documentclass[10pt]{article}
+\topmargin -.5in
+\textwidth 6.5in
+\textheight 9in
+\oddsidemargin 0in
+
+\pagestyle{empty}
+
+\begin{document}
+
+== The major things I've developed: ==
+
+AMR-MHD:  This uses Balsara's 2001 AMR technique (and of course Enzo).
+ Initially we used Ryu and Jones (1995) and their CT (1998), though
+ after some initial turbulence tests we tried also Balsara Spicer CT
+ (1999).  This failed to get a high enough resolution, though the AMR
+ seem to be functional.
+
+ Unsplit Second Order MHD: Currently unpublished.  This used MUSCL
+ Hancock reconstruction, second order Runge Kutta time integration, and
+ a variety of slope limiters and reconstruction fields (primitive,
+ conserved, characteristic) and the Gardiner \& Stone (2005) CT
+ techniques.  Currently has unresolved stability issues, though many
+ stability improvements were made over the course of it's development,
+ including unsplit Lapidus viscosity and active reimann solver switches
+ based on failure detection.
+
+ Grahical IDL analysis and visualization package, "The Microscope."
+ The Microscope is an object oriented IDL tool centered around not only
+ visualizing AMR data, but comparison of different datasets and
+ snapshots.  Development of the Microscope centered heavily on detailed
+ debugging of numerical MHD methods.
+
+ Run Tracker: A system for cataloging and examining history and
+ performance of simulations.  The system posts information about a run
+ (e.g. name, description, number of nodes/cores) at the submission of
+ the job to a database, updates on it's start, and upon completion
+ posts statistics about the run itself (e.g. total wall time/SUs,
+ start/end cycle, start/end simulation time) This helps the scientist
+ keep track of suites of simulations as well as easily record progress.
+
+ Code Flow: Automated flow chart.  A suite of python code analyzed the
+ call history for a software package (order of function calls and calls
+ stacks) and reported through an AJAX (Dynamic HTML) front end that
+ allowed the developer to easily view each function, it's place in all
+ used call stacks, and all the function it in turn called.
+
+ Additionally I've written many documents outlining the underpinnings
+ of Enzo as well as user guides for beginning development.
+
+\end{document}

@@ -1,0 +1,6 @@
+#!/bin/tcsh
+
+foreach i (`cat stuff`)
+  addbib.py -u $i
+end
+#end
